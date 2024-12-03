@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -7,21 +7,24 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/profile-photo.png" alt="Profile" class="profile-picture">
+                </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Početna stranica</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Career choice</a>
+                        <a class="nav-link" href="#">Profesionalna orijentacija</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Ranked faculties</a>
+                        <a class="nav-link" href="#">Rang lista</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" placeholder="Pretraga..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Pretraži</button>
                 </form>
             </div>
         </div>
