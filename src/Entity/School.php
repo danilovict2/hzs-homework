@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: SchoolRepository::class)]
 #[UniqueEntity(fields: ['name'], message: 'There is already a school with this name')]
+#[ORM\HasLifecycleCallbacks]
 class School
 {
     #[ORM\Id]
