@@ -1,6 +1,4 @@
 <template>
-    <TheNavbar />
-
     <div class="first-section">
         <div class="students-image">
             <img src="/img/students.jpg" alt="students">
@@ -22,7 +20,6 @@
 </template>
 
 <script setup>
-import TheNavbar from '../components/TheNavbar.vue';
 import Coordinate from '../utils/Coordinate';
 import Map from './Map.vue';
     
