@@ -7,9 +7,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <a class="navbar-brand" href="#">
-                    <i class="fas fa-map-marker-alt"></i>
-                </a>
+                <div>
+                    <img src="/img/students.jpg" class="profile-picture">
+                </div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Početna stranica</a>

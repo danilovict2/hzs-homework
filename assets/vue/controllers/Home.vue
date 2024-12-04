@@ -1,11 +1,7 @@
 <template>
-<<<<<<< HEAD
-    <div class="first-section">
-=======
     <TheNavbar />
 
     <div class="first-section shadow-lg">
->>>>>>> refs/remotes/origin/frontend
         <div class="students-image">
             <img src="/img/students.jpg" alt="students">
         </div>
@@ -21,10 +17,6 @@
             </p>
         </div>
     </div>
-
-<<<<<<< HEAD
-    <Map :markerCoordinates="markers"></Map>
-=======
     <div class="between-section">
         <h2>Tvoja pretraga je jedinstvena <br/> Baš kao i ti.</h2>
         <p>
@@ -48,12 +40,8 @@
             <img src="/img/graduation.jpg" alt="students">
         </div>
     </div>
-    
-    <div class="map-container">
-        <div class="map"></div>
-    </div>
     <a id="map"></a>
->>>>>>> refs/remotes/origin/frontend
+    <Map :markerCoordinates="markers"></Map>
 </template>
 
 <script setup>

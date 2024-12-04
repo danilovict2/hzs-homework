@@ -19,7 +19,7 @@ nav{
 .profile-picture{
     width: 40px; 
     height: 40px;
-    border: 1px solid green; 
+    border: 2px solid green; 
     border-radius: 100%;
 }
 
