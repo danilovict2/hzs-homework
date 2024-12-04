@@ -26,6 +26,10 @@
                     <input class="form-control me-2" type="search" placeholder="Pretraga..." aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Pretraži</button>
                 </form>
+                <div class="login-signup-btns">
+                    <button type="button" class="btn btn-outline-secondary">Prijavi se</button>
+                    <button type="button" class="btn btn-success">Registruj se</button>
+                </div>
             </div>
         </div>
     </nav>
