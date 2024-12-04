@@ -18,12 +18,13 @@
         </div>
     </div>
 
-    <div class="map-container">
-        <div class="map"></div>
-    </div>
+    <Map :markerCoordinates="markers"></Map>
 </template>
 
 <script setup>
 import TheNavbar from '../components/TheNavbar.vue';
+import Coordinate from '../utils/Coordinate';
+import Map from './Map.vue';
     
+const markers = [new Coordinate(34.0522, -118.2437), new Coordinate(48.8566, 2.3522)];
 </script>

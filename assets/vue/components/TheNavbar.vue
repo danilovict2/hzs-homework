@@ -8,7 +8,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <a class="navbar-brand" href="#">
-                    <img src="/img/profile-photo.png" alt="Profile" class="profile-picture">
+                    <i class="fas fa-map-marker-alt"></i>
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
