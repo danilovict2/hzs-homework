@@ -7,7 +7,7 @@
 
 .map{
     width: 100%;
-    height: 800px;
+    height: 700px;
     background-color: green;
     border-radius: 20px;
 }
@@ -27,6 +27,26 @@ nav{
     display: flex;
 }
 
+.between-section{
+    text-align: center;
+    color: #001f00;
+    margin: 100px;
+}
+
+.second-section{
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-signup-btns{
+    display: flex;
+    gap: 5px;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #001f00;
+}
+
 .students-image{
     width: 50%;
 }
@@ -42,9 +62,14 @@ hr{
     font-weight: bold;
 }
 
-a{
+.find-colledge  a{
     text-decoration: none;
     color: white;
+}
+
+.between-section  a{
+    text-decoration: none;
+    color: #001f00;
 }
 
 .find-colledge > h3{
@@ -57,8 +82,8 @@ a{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: rgb(0,42,29);
-    background: linear-gradient(0deg, #002a1d 0%, #02531d 40%, #006a2c 100%);
+    background: rgb(0,106,44);
+    background: radial-gradient(circle, rgba(0,106,44,1) 15%, rgba(2,83,29,1) 61%, rgba(0,42,29,1) 100%);
     color: white;
     padding: 100px 250px;
     text-align: center;
