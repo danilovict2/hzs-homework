@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class SchoolController extends AbstractController
 {
     #[Route('/school/{school}', name: 'school_show')]
-    public function show(School $school): Response
+    public function show(): Response
     {
         return $this->render('school/show.html.twig');
     }

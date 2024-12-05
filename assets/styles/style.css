@@ -123,13 +123,73 @@ hr{
     gap: 20px;
 }
 
-.college-description {
+.college-grades {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
     max-width: 700px;
     margin-top: 40px;
     box-shadow: 0px 1px 20px rgb(66, 66, 66);
+}
+
+.grade-a{
+    background-color: #00aa00;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.grade-b{
+    background-color: #2c788b;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.grade-c{
+    background-color: #dbcf21;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.grade-d{
+    background-color: #da8d1b;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.grade-f{
+    background-color: #e24c06;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.grade{
+    display: flex;
+    gap: 20px;
 }
 
 .college-website {
