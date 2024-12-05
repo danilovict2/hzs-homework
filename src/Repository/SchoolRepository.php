@@ -39,4 +39,16 @@ class SchoolRepository extends ServiceEntityRepository
         
         return $qb->getQuery()->getResult();
     }
+
+    public function findTopSchools(): array 
+    {
+        $qb = $this->createQueryBuilder('s')
+            ->join('s.rating', 'r')
+        ;
+        $qb->addSelect('AVG((r.academicValue + r.value + r.campus + r.security + r.location + r.professors) / 6) AS HIDDEN avg_rating')
+            ->groupBy('s.id')
+            ->orderBy('avg_rating', 'DESC');
+        
+        return $qb->getQuery()->getResult();
+    }
 }

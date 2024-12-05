@@ -9,7 +9,7 @@
             <hr>
             <p class="">
                 Pronalaženje pravog fakulteta za tebe ne treba biti teško. Zato na području bivše Jugoslavije, olakšavamo otkrivanje i povezivanje sa najboljim fakultetima za 
-                <a href="/college-quiz">
+                <a href="/school-quiz">
                     <b>tebe</b>
                 </a>.
             </p>
@@ -46,6 +46,12 @@
 <script setup>
 import Coordinate from '../utils/Coordinate';
 import Map from './Map.vue';
+const { locations } = defineProps({
+    locations: Array
+});
 
-const markers = [new Coordinate(34.0522, -118.2437), new Coordinate(48.8566, 2.3522)];
+let markers = [];
+for (const location of locations) {
+    markers.push(new Coordinate(location.lat, location.lng));
+}
 </script>

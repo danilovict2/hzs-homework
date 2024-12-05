@@ -10,9 +10,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class SchoolController extends AbstractController
 {
@@ -50,8 +54,21 @@ class SchoolController extends AbstractController
     public function quizResults(SchoolRepository $schoolRepository): Response 
     {
         $schools = $schoolRepository->findByCountriesAndPriorities($this->getUser()->getQuiz()->getCountries(), $this->getUser()->getQuiz()->getPriorities());
+        $normalizer = new ObjectNormalizer(defaultContext: [AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => fn () => null]);
+        $serializer = new Serializer([$normalizer]);
         return $this->render('school/index.html.twig', [
-            'schools' => $schools
+            'schools' => $serializer->normalize($schools)
+        ]);
+    }
+
+    #[Route('/schools', name: 'school_index')]
+    public function index(SchoolRepository $schoolRepository): Response
+    {
+        $schools = $schoolRepository->findTopSchools($this->getUser()->getQuiz()->getCountries(), $this->getUser()->getQuiz()->getPriorities());
+        $normalizer = new ObjectNormalizer(defaultContext: [AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => fn () => null]);
+        $serializer = new Serializer([$normalizer]);
+        return $this->render('school/index.html.twig', [
+            'schools' => $serializer->normalize($schools)
         ]);
     }
 }
