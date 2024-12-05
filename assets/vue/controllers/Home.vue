@@ -18,11 +18,12 @@
         </div>
     </div>
     <div class="between-section">
-        <h2>Tvoja pretraga je jedinstvena <br/> Baš kao i ti.</h2>
+        <h2>Tvoja pretraga je jedinstvena <br /> Baš kao i ti.</h2>
         <p>
-            Personalizujemo tvoju pretragu fakulteta prema tvojim interesovanjima <br/> kako bismo ti olakšali izbor u odabiru pravog fakulteta za tebe. 
-            <br/>
-            Proveri lokacije popularnih fakulteta na 
+            Personalizujemo tvoju pretragu fakulteta prema tvojim interesovanjima <br /> kako bismo ti olakšali
+            izbor u odabiru pravog fakulteta za tebe.
+            <br />
+            Proveri lokacije popularnih fakulteta na
             <a href="#map"><b>mapi</b>.</a>
         </p>
     </div>

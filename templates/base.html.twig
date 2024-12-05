@@ -14,7 +14,39 @@
 	</head>
 	<body>
 		<div class="d-flex flex-column min-vh-100">
-			<div {{ vue_component('TheNavbar') }}></div>
+			<nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Početna stranica</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Profesionalna orijentacija</a>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="#">Rang lista</a>
+							</li>
+						</ul>
+						<form class="d-flex" role="search">
+							<input class="form-control me-2" type="search" placeholder="Pretraga..." aria-label="Search">
+							<button class="btn btn-outline-success" type="submit">Pretraži</button>
+						</form>
+						{% if is_granted("ROLE_USER") %}
+						<i class="fa-solid fa-user"></i>
+						{% else %}
+						<div class="login-signup-btns">
+							<a class="btn btn-outline-secondary" href="{{ path('app_login') }}">Prijavi se</a>
+							<a class="btn btn-success" href="{{ path('app_register') }}">Registruj se</a>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</nav>
 			{% block body %}{% endblock %}
 		</div>
 
