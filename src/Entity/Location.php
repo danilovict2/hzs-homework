@@ -30,6 +30,9 @@ class Location
     #[ORM\OneToMany(targetEntity: School::class, mappedBy: 'location')]
     private Collection $schools;
 
+    #[ORM\Column(length: 50)]
+    private ?string $country = null;
+
     public function __construct()
     {
         $this->schools = new ArrayCollection();
@@ -106,6 +109,18 @@ class Location
                 $school->setLocation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(string $country): static
+    {
+        $this->country = $country;
 
         return $this;
     }
