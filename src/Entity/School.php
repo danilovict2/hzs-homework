@@ -4,10 +4,8 @@ namespace App\Entity;
 
 use App\Repository\SchoolRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: SchoolRepository::class)]
-#[UniqueEntity(fields: ['name'], message: 'There is already a school with this name')]
 #[ORM\HasLifecycleCallbacks]
 class School
 {
@@ -16,7 +14,7 @@ class School
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 100, unique: true)]
+    #[ORM\Column(length: 100)]
     private ?string $name = null;
 
     #[ORM\Column]
