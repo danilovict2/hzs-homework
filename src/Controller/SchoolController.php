@@ -10,7 +10,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
@@ -21,9 +20,13 @@ use Symfony\Component\Serializer\Serializer;
 class SchoolController extends AbstractController
 {
     #[Route('/school/{school}', name: 'school_show')]
-    public function show(): Response
+    public function show(School $school): Response
     {
-        return $this->render('school/show.html.twig');
+        $normalizer = new ObjectNormalizer(defaultContext: [AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => fn () => null]);
+        $serializer = new Serializer([$normalizer]);
+        return $this->render('school/show.html.twig', [
+            'school' => $serializer->normalize($school)
+        ]);
     }
 
     #[IsGranted('ROLE_USER')]

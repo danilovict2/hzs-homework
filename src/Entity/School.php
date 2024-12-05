@@ -36,6 +36,9 @@ class School
     #[ORM\OneToOne(mappedBy: 'School', cascade: ['persist', 'remove'])]
     private ?Rating $rating = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $website = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -148,5 +151,17 @@ class School
     {
         $rating = new Rating();
         $this->setRating($rating);
+    }
+
+    public function getWebsite(): ?string
+    {
+        return $this->website;
+    }
+
+    public function setWebsite(string $website): static
+    {
+        $this->website = $website;
+
+        return $this;
     }
 }
