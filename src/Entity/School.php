@@ -33,6 +33,9 @@ class School
     #[ORM\JoinColumn(nullable: false)]
     private ?Location $location = null;
 
+    #[ORM\OneToOne(mappedBy: 'School', cascade: ['persist', 'remove'])]
+    private ?Rating $rating = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,5 +124,29 @@ class School
         $this->location = $location;
 
         return $this;
+    }
+
+    public function getRating(): ?Rating
+    {
+        return $this->rating;
+    }
+
+    public function setRating(Rating $rating): static
+    {
+        // set the owning side of the relation if necessary
+        if ($rating->getSchool() !== $this) {
+            $rating->setSchool($this);
+        }
+
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setRatingValue()
+    {
+        $rating = new Rating();
+        $this->setRating($rating);
     }
 }

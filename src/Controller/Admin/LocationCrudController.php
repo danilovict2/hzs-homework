@@ -22,6 +22,7 @@ class LocationCrudController extends AbstractCrudController
         yield TextField::new('name');
         yield NumberField::new('lat');
         yield NumberField::new('lng');
+        yield TextField::new('country');
     }
     
 }

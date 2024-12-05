@@ -19,17 +19,29 @@
             <h3>Preferencije</h3>
             <h1>Sta vam je najbitnije?</h1>
             <h6>Za najbolje rezultate izaberite 3-5 prioriteta.</h6>
-            <div>
-                
+            <div class="row my-3">
+                <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+                    <div v-for="(item, index) in priorities.slice(0, 3)" :key="index" class="d-flex flex-column">
+                        <label :for="item.label">{{ item.label }}</label>
+                        <input type="range" min="1" max="100" v-model="item.value" :name="item.label" @change="canContinue = true"/>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center align-items-center flex-column">
+                    <div v-for="(item, index) in priorities.slice(3)" :key="index" class="d-flex flex-column">
+                        <label :for="item.label">{{ item.label }}</label>
+                        <input type="range" min="1" max="100" v-model="item.value" :name="item.label" @change="canContinue = true" />
+                    </div>
+                </div>
             </div>
         </div>
 
-        <button class="btn btn-success" :disabled="!canContinue" @click="stage++; canContinue = false;">Nastavi</button>
+        <button class="btn btn-success" :disabled="!canContinue" @click="onClick">Nastavi</button>
         <p>Korak {{ stage }}/2</p>
     </div>
 </template>
 
 <script setup>
+import axios from 'axios';
 import { ref } from 'vue';
 
 const stage = ref(1);
@@ -40,6 +52,15 @@ const countries = ref([
         value: '',
         filteredSuggestions: []
     }
+]);
+
+const priorities = ref([
+    { label: 'Akademska vrednost:', value: 1, name: 'academicValue' },
+    { label: 'Isplativost:', value: 1, name: 'value' },
+    { label: 'Kampus:', value: 1, name: 'campus' },
+    { label: 'Lokacija:', value: 1, name: 'location' },
+    { label: 'Sigurnost:', value: 1, name: 'security' },
+    { label: 'Profesori:', value: 1, name: 'professors' },
 ]);
 
 const suggestions = [
@@ -70,4 +91,19 @@ const selectSuggestion = (index, suggestion) => {
         })
     }
 };
+
+const onClick = () => {
+    stage.value++; 
+    canContinue.value = false;
+    if (stage.value == 3) {
+        const data = new FormData();
+        data.append('countries', JSON.stringify(countries.value));
+        data.append('priorities', JSON.stringify(priorities.value));
+        axios.post('', data, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }).then(response => window.location = response.data);
+    }
+}
 </script>
