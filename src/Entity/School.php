@@ -29,6 +29,10 @@ class School
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\ManyToOne(inversedBy: 'schools')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Location $location = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,5 +109,17 @@ class School
     public function setUpdatedAtValue(): void 
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getLocation(): ?Location
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Location $location): static
+    {
+        $this->location = $location;
+
+        return $this;
     }
 }
