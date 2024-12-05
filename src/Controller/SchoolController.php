@@ -60,4 +60,15 @@ class SchoolController extends AbstractController
             'schools' => $serializer->normalize($schools)
         ]);
     }
+
+    #[Route('/schools', name: 'school_index')]
+    public function index(SchoolRepository $schoolRepository): Response
+    {
+        $schools = $schoolRepository->findTopSchools($this->getUser()->getQuiz()->getCountries(), $this->getUser()->getQuiz()->getPriorities());
+        $normalizer = new ObjectNormalizer(defaultContext: [AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => fn () => null]);
+        $serializer = new Serializer([$normalizer]);
+        return $this->render('school/index.html.twig', [
+            'schools' => $serializer->normalize($schools)
+        ]);
+    }
 }
