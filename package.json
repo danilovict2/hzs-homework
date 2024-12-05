@@ -9,6 +9,7 @@
         "@symfony/ux-vue": "file:vendor/symfony/ux-vue/assets",
         "@symfony/webpack-encore": "^5.0.0",
         "@vue/compiler-sfc": "^3.5.13",
+        "axios": "^1.7.9",
         "bootstrap": "^5.3.3",
         "core-js": "^3.38.0",
         "regenerator-runtime": "^0.13.9",

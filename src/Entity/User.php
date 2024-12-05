@@ -41,6 +41,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?SchoolQuiz $quiz = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -147,5 +150,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUpdatedAtValue(): void 
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getQuiz(): ?SchoolQuiz
+    {
+        return $this->quiz;
+    }
+
+    public function setQuiz(?SchoolQuiz $quiz): static
+    {
+        $this->quiz = $quiz;
+
+        return $this;
     }
 }
