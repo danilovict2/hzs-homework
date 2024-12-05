@@ -1,12 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SchoolController!
-{% endblock %}
+{% block title %}Hello SchoolController!{% endblock %}
 
 {% block body %}
-	<div class="container">
-		{% for school in schools %}
-            <div>{{ school.name }}</div>
-        {% endfor %}
-	</div>
+<div {{ vue_controller('SchoolPage') }}></div>
 {% endblock %}
