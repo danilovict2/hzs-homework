@@ -20,10 +20,49 @@
             <div class="college-website">
                     <i class="fa-solid fa-globe fa-lg" style="color: gray;"></i><a href="#college-website"> admissions.yale.edu</a>
             </div>
-            <div class="college-description">
-                <p class="description-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci at dolor rerum impedit enim. Fuga, explicabo odio quia facilis vero, debitis culpa, quibusdam nihil nam sit velit enim consequatur nulla?
-                </p>
+            <div class="college-grades">
+                <div class="grades-container">
+                    <div class="grade">
+                        <div class="grade-a">
+                            A
+                        </div>
+                        <h4>Akademska vrednost</h4>
+                    </div>
+
+                    <div class="grade">
+                        <div class="grade-b">
+                            B
+                        </div>
+                        <h4>Isplativost</h4>
+                    </div>
+
+                    <div class="grade">
+                        <div class="grade-c">
+                            C
+                        </div>
+                        <h4>Kampus</h4>
+                    </div>
+                </div>
+                <div class="grades-container">
+                    <div class="grade">
+                        <div class="grade-d">
+                            D
+                        </div>
+                        <h4>Lokacija</h4>
+                    </div>
+                    <div class="grade">
+                        <div class="grade-f">
+                            F
+                        </div>
+                        <h4>Sigurnost</h4>
+                    </div>
+                    <div class="grade">
+                        <div class="grade-f">
+                            F
+                        </div>
+                        <h4>Profesori</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
