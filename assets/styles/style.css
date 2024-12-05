@@ -189,7 +189,13 @@ hr{
 
 .grade{
     display: flex;
-    gap: 20px;
+    gap: 30px;
+}
+
+.main-grade{
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .college-website {
@@ -272,4 +278,17 @@ hr{
 .country-filter {
     display: flex;
     flex-direction: column;
+}
+
+.login-form{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 0px 1px 10px rgb(66, 66, 66);
+    padding: 20px;
 }

@@ -63,6 +63,12 @@
                         <h4>Profesori</h4>
                     </div>
                 </div>
+                <div class="main-grade">
+                    <h3>Ukupna ocena: </h3>
+                    <div class="grade-d">
+                        D
+                    </div>
+                </div>
             </div>
         </div>
     </div>
