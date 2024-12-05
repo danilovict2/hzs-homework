@@ -4,10 +4,8 @@ namespace App\Entity;
 
 use App\Repository\SchoolRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: SchoolRepository::class)]
-#[UniqueEntity(fields: ['name'], message: 'There is already a school with this name')]
 #[ORM\HasLifecycleCallbacks]
 class School
 {
@@ -16,7 +14,7 @@ class School
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 100, unique: true)]
+    #[ORM\Column(length: 100)]
     private ?string $name = null;
 
     #[ORM\Column]
@@ -30,6 +28,13 @@ class School
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    #[ORM\ManyToOne(inversedBy: 'schools')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Location $location = null;
+
+    #[ORM\OneToOne(mappedBy: 'School', cascade: ['persist', 'remove'])]
+    private ?Rating $rating = null;
 
     public function getId(): ?int
     {
@@ -107,5 +112,41 @@ class School
     public function setUpdatedAtValue(): void 
     {
         $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function getLocation(): ?Location
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Location $location): static
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getRating(): ?Rating
+    {
+        return $this->rating;
+    }
+
+    public function setRating(Rating $rating): static
+    {
+        // set the owning side of the relation if necessary
+        if ($rating->getSchool() !== $this) {
+            $rating->setSchool($this);
+        }
+
+        $this->rating = $rating;
+
+        return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setRatingValue()
+    {
+        $rating = new Rating();
+        $this->setRating($rating);
     }
 }

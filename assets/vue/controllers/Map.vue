@@ -14,11 +14,9 @@ import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import 'ol/ol.css';
 import { onMounted, useTemplateRef } from 'vue';
 import Style from 'ol/style/Style';
-import Icon from 'ol/style/Icon';
 import { OSM } from 'ol/source';
 import Text from 'ol/style/Text';
-import Fill from 'ol/style/Fill';
-import Stroke from 'ol/style/Stroke';
+
 
 const { markerCoordinates } = defineProps({
     markerCoordinates: {

@@ -2,29 +2,27 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\School;
+use App\Entity\Location;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class SchoolCrudController extends AbstractCrudController
+class LocationCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return School::class;
+        return Location::class;
     }
 
+    
     public function configureFields(string $pageName): iterable
     {
         yield IdField::new('id')->hideOnForm();
         yield TextField::new('name');
         yield NumberField::new('lat');
         yield NumberField::new('lng');
-        yield DateField::new('createdAt')->hideOnForm();
-        yield DateField::new('updatedAt')->hideOnForm();
-        yield AssociationField::new('location');
+        yield TextField::new('country');
     }
+    
 }
