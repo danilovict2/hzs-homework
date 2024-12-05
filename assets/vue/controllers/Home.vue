@@ -1,6 +1,4 @@
 <template>
-    <TheNavbar />
-
     <div class="first-section shadow-lg">
         <div class="students-image">
             <img src="/img/students.jpg" alt="students">

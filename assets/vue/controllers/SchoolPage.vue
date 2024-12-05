@@ -1,5 +1,4 @@
 <template>
-    <TheNavbar/>
 </template>
 
 <script setup>
