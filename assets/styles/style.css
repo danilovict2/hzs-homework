@@ -87,3 +87,129 @@ hr{
     padding: 100px 250px;
     text-align: center;
 }
+
+.general-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.college-image img{
+    width: 1200px;
+    height: 500px;
+    box-shadow: 0px 1px 20px rgb(66, 66, 66);
+    border-radius: 20px 20px 0px 0px;
+}
+
+.college-info{
+    display: flex;
+    flex-direction: column;
+    color: #004e00;
+    background-color: white;
+    width: 1200px;
+    padding: 5px 20px;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 1px 20px rgb(66, 66, 66);
+}
+
+.college-info h4 {
+    color: #007500;
+}
+
+.website-description-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.college-description {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 700px;
+    margin-top: 40px;
+    box-shadow: 0px 1px 20px rgb(66, 66, 66);
+}
+
+.college-website {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 400px;
+    margin-top: 40px;
+    box-shadow: 0px 1px 20px rgb(66, 66, 66);
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.college-website a {
+    text-decoration: none;
+}
+
+.colleges-scroll {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    display: flex;
+    background-color: white;
+    height: 700px;
+    width: 1200px;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 15px;
+    overflow-y: scroll;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 200px;
+    box-shadow: 0px 1px 10px rgb(66, 66, 66);
+}
+
+.college { 
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0px 1px 10px rgb(66, 66, 66);
+    width: 1100px;
+    height: 200px;
+    color: #007500;
+    justify-content: space-between;
+}
+
+.college-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.college h1{
+    color: #004e00;
+}
+
+.small-image {
+    width: 300px;
+    height: 200px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.filters {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flex;
+    background-color: white;
+    height: 700px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 1px 10px rgb(66, 66, 66);
+}
+
+.country-filter {
+    display: flex;
+    flex-direction: column;
+}

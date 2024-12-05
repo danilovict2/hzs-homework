@@ -8,9 +8,8 @@
             <h2><b>KOJI TI NAJVIŠE ODGOVARA</b></h2>
             <hr>
             <p class="">
-                Pronalaženje pravog fakulteta za tebe ne treba biti teško. Zato na području bivše Jugoslavije,
-                olakšavamo otkrivanje i povezivanje sa najboljim fakultetima za
-                <a href="#">
+                Pronalaženje pravog fakulteta za tebe ne treba biti teško. Zato na području bivše Jugoslavije, olakšavamo otkrivanje i povezivanje sa najboljim fakultetima za 
+                <a href="/college-quiz">
                     <b>tebe</b>
                 </a>.
             </p>
@@ -27,7 +26,7 @@
         </p>
     </div>
 
-    <div class="second-section shadow-lg fs-6">
+    <div class="second-section shadow-lg md fs-6">
         <div class="find-colledge">
             <h4 class="fw-light">ODABERI FAKULTET</h4>
             <h2><b>SVE ŠTO TI JE POTREBNO DA ODLUČIŠ</b></h2>
@@ -42,7 +41,6 @@
         </div>
     </div>
     <Map :markerCoordinates="markers"></Map>
-
 </template>
 
 <script setup>

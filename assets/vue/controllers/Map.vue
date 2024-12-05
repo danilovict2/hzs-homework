@@ -1,5 +1,5 @@
 <template>
-    <div id="map" style="width: 100%;height: 50vh;" ref="mapDiv">
+    <div id="map" :style="{width: width, height: height}" ref="mapDiv">
 
     </div>
 </template>
@@ -14,24 +14,40 @@ import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
 import 'ol/ol.css';
 import { onMounted, useTemplateRef } from 'vue';
 import Style from 'ol/style/Style';
-import Icon from 'ol/style/Icon';
 import { OSM } from 'ol/source';
 import Text from 'ol/style/Text';
-import Fill from 'ol/style/Fill';
-import Stroke from 'ol/style/Stroke';
 
-const { markerCoordinates } = defineProps({
+
+const { markerCoordinates, center, zoom, width, height } = defineProps({
     markerCoordinates: {
         type: Array,
         default: []
-    }
+    },
+    center: {
+        type: Object,
+        // Center of the balkans
+        default: {
+            lat: 23.0,
+            lng: 41.0
+        }
+    },
+    zoom: {
+        type: Number,
+        default: 6
+    },
+    width: {
+        type: String,
+        default: '100%'
+    },
+    height: {
+        type: String,
+        default: '50vh'
+    },
 })
 
 const mapDiv = useTemplateRef('mapDiv')
 
 onMounted(() => {
-    const balkansCenter = { lat: 23.0, lng: 41.0 };
-
     const map = new Map({
         target: mapDiv.value,
         layers: [
@@ -41,9 +57,9 @@ onMounted(() => {
         ],
 
         view: new View({
-            zoom: 6,
+            zoom: zoom,
             maxZoom: 18,
-            center: [balkansCenter.lat, balkansCenter.lng],
+            center: [center.lat, center.lng],
             projection: "EPSG:4326",
             constrainResolution: true
         }),
