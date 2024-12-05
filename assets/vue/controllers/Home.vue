@@ -40,7 +40,6 @@
             <img src="/img/graduation.jpg" alt="students">
         </div>
     </div>
-    <a id="map"></a>
     <Map :markerCoordinates="markers"></Map>
 </template>
 

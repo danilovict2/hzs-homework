@@ -1,5 +1,4 @@
 <template>
-    <TheNavbar/>
     <div class="filters">
         <h4>Filteri</h4>
         
